@@ -58,8 +58,12 @@ class MainActivity : AppCompatActivity() {
 //        testFun()
 //        com.ryan.kotlinsample.review.main(123)
 //        testCollectionMain()
-        com.ryan.kotlinsample.basic.main()
+//        com.ryan.kotlinsample.basic.main()
+//        mainta()
+//        maintr()
+        mainTestCallJava()
     }
+
 
     private fun testFun() {
         // 参数默认会按照顺序赋值

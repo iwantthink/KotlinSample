@@ -54,7 +54,21 @@ fun main(): Unit {
     lll(x1 == x3)
     lll(x2 == x3)
 
+    val y1 = Counter(1)
+    val y2 = Counter(2)
+    y1 + 2
 
+    x1?.let {
+
+    }
+
+    val t2: Nothing? = null
+}
+
+data class Counter(val dayIndex: Int) {
+    operator fun plus(increment: Int): Counter {
+        return Counter(dayIndex + increment)
+    }
 }
 
 
