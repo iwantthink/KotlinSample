@@ -5,6 +5,12 @@
 
     <dist:module dist:instant="true"/>
 
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <permission android:name="com.ryan.provider.permission"></permission>
+
     <application
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
@@ -12,13 +18,37 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <receiver
+                android:name=".study.MyReceiver"
+                android:enabled="true"
+                android:exported="true">
+        </receiver>
+
+        <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity">
+        </activity>
+
+        <service
+                android:name=".study.ServiceLifecycle"
+                android:exported="true"
+                android:process=":isolate">
+        </service>
+        <service android:name=".study.IntentServiceSample">
+        </service>
+
+        <provider android:authorities="com.ryan.provider"
+                  android:process=":test"
+                  android:exported="true"
+                  android:permission="com.ryan.provider.permission"
+                  android:name=".study.MyContentProvider">
+
+        </provider>
     </application>
 
 </manifest>

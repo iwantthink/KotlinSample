@@ -19,3 +19,9 @@ fun mainTestCallJava(): Unit {
 
 }
 
+class CCCC {
+    companion object {
+        @JvmStatic fun callStatic() {}
+        fun callNonStatic() {}
+    }
+}
